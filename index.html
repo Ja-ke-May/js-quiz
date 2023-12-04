@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeWise</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="overflow-hidden h-screen">
+
+    <!-- Video Background -->
+    <video id="video-background" autoplay loop muted class="object-cover fixed inset-0 w-full h-full z-0">
+        <source src="4K_13.mp4" type="video/mp4">
+        Unsupported video
+    </video>
+
+    <header class="fixed top-0 left-0 w-full bg-black bg-opacity-60 text-white text-center py-4 z-50">
+        <h1 class="text-4xl font-bold">TimeWise</h1>
+    </header>  
+      
+    <main class="relative z-10 flex items-center justify-center h-full">
+        <div id="quiz-container" class="max-w-md p-6 bg-black bg-opacity-60 rounded shadow-md mx-auto text-center text-white">
+            <div id="timer" class="flex items-center justify-center mb-4">
+                00:00
+            </div>            
+            <div id="question-box" class="mb-4">
+            </div>
+            <div id="answer-boxs" class="grid grid-cols-2 gap-4 justify-center">
+                <button class="answer-box bg-pink-500 text-white px-4 py-2 rounded">Option 1</button>
+                <button class="answer-box bg-pink-500 text-white px-4 py-2 rounded">Option 2</button>
+                <button class="answer-box bg-pink-500 text-white px-4 py-2 rounded">Option 3</button>
+                <button class="answer-box bg-pink-500 text-white px-4 py-2 rounded">Option 4</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.vecteezy.com/video/28379763-sand-glass-2d">sand glass 2d Stock Videos by Vecteezy</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
