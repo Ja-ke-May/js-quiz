@@ -99,9 +99,74 @@ const questions = [
           options: ["Earth", "Jupiter", "Saturn", "Neptune"],
           correctAnswer: "Jupiter",
         },
+        {
+          question: "Which country is known as the 'Land of the Rising Sun'?",
+          options: ["China", "South Korea", "Japan", "Vietnam"],
+          correctAnswer: "Japan",
+      },
+      {
+          question: "Who is the 16th President of the United States?",
+          options: ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John F. Kennedy"],
+          correctAnswer: "Abraham Lincoln",
+      },
+      {
+          question: "What is the largest continent on Earth?",
+          options: ["North America", "Europe", "Asia", "Australia"],
+          correctAnswer: "Asia",
+      },
+      {
+          question: "Who wrote 'Romeo and Juliet'?",
+          options: ["Charles Dickens", "Jane Austen", "William Shakespeare", "Mark Twain"],
+          correctAnswer: "William Shakespeare",
+      },
+      {
+          question: "Which chemical element has the symbol 'H'?",
+          options: ["Helium", "Hydrogen", "Hassium", "Hafnium"],
+          correctAnswer: "Hydrogen",
+      },
+      {
+          question: "What is the capital city of France?",
+          options: ["Berlin", "Madrid", "Paris", "Rome"],
+          correctAnswer: "Paris",
+      },
+      {
+          question: "Who is the 44th President of the United States?",
+          options: ["Barack Obama", "Donald Trump", "George W. Bush", "Bill Clinton"],
+          correctAnswer: "Barack Obama",
+      },
+      {
+          question: "In which year was the Eiffel Tower completed?",
+          options: ["1889", "1901", "1923", "1945"],
+          correctAnswer: "1889",
+      },
+      {
+          question: "What is the capital city of Australia?",
+          options: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+          correctAnswer: "Canberra",
+      },
+      {
+          question: "Who wrote '1984'?",
+          options: ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Philip K. Dick"],
+          correctAnswer: "George Orwell",
+      },
+      {
+          question: "Who is the author of 'The Great Gatsby'?",
+          options: ["F. Scott Fitzgerald", "Ernest Hemingway", "Jane Austen", "Charles Dickens"],
+          correctAnswer: "F. Scott Fitzgerald",
+      },
+      {
+          question: "What is the largest river in the world?",
+          options: ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
+          correctAnswer: "Amazon River",
+      },
+      {
+        question: "Who developed the theory of general relativity?",
+        options: ["Isaac Newton", "Albert Einstein", "Niels Bohr", "Galileo Galilei"],
+        correctAnswer: "Albert Einstein",
+      }
 ];
 
-// Shuffle function to randomize the order of questions and answer options
+// Shuffle function
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -194,7 +259,7 @@ function startTimer() {
     } else {
       // Time is up, end the quiz
       clearInterval(timer);
-      alert('Time is up! Your score: ' + count);
+      alert('Out of Time! Your score: ' + count);
       resetQuiz();
     }
   }, 1000);
@@ -203,7 +268,7 @@ function startTimer() {
 // Function to reset the timer
 function resetTimer() {
   clearInterval(timer);
-  timerDuration = 20; // Reset the timer duration
+  timerDuration = 22; // Reset the timer duration
   updateTimer();
   startTimer(); // Start the timer again after resetting
 }
@@ -220,5 +285,6 @@ function resetQuiz() {
 // Initial load of the first question and start the timer
 loadQuestion();
 updateTimer(); // Display initial timer value
+
 startTimer(); // Start the timer
 
