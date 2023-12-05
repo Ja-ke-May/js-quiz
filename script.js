@@ -31,7 +31,7 @@ const questions = [
         },
         {
           question: "Which mountain is the highest in the world?",
-          options: ["Mount Everest", "K2", "Kangchenjunga", "Lhotse"],
+          options: ["Mount Everest", "K2", "Makalu", "Lhotse"],
           correctAnswer: "Mount Everest",
         },
         {
@@ -184,6 +184,8 @@ const quizContainer = document.getElementById('quiz-container');
 const questionBox = document.getElementById('question-box');
 const answerBoxs = document.getElementById('answer-boxs');
 const answerButtons = document.getElementsByClassName('answer-box');
+const plusThree = document.getElementById('green-plus');
+const minusFive = document.getElementById('red-minus');
 
 let currentQuestionIndex = 0;
 let count = 0;
@@ -217,8 +219,17 @@ const checkAnswer = (event) => {
   if (selectedAnswer === correctAnswer) {
     count++;
     timerDuration += 3;
+    plusThree.style.display = 'block';
+    setTimeout(() => {
+      plusThree.style.display = 'none';
+    }, 500);
+
   } else {
     timerDuration -= 6;
+    minusFive.style.display = 'block';
+    setTimeout(() => {
+      minusFive.style.display = 'none';
+    }, 500);
   }
 
   // Move to the next question
@@ -241,7 +252,7 @@ loadQuestion();
 
 const timerElement = document.getElementById('timer');
 let timer;
-let timerDuration = 20; // Initial timer duration in seconds
+let timerDuration = 22; // Initial timer duration in seconds
 
 // Function to update and display the timer
 function updateTimer() {
