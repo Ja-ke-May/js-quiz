@@ -11,7 +11,7 @@
         }
         @keyframes scaledown {
             from {
-                transform: scale(100);
+                transform: scale(4);
             }
             to {
                 transform: scale(1);
@@ -29,37 +29,32 @@
             }
         }   
         #video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1; /* Place it behind other elements */
+            z-index: -1; 
         }
         #video-sand {
             animation: scaledown 2s forwards ease-out;
         }
     </style>    
 </head>
-<body class="m-0">
+<body class="bg-black">
     <!-- Video Background -->
-    <video id="video-background" autoplay loop muted class="object-cover">
+    <video id="video-background" autoplay loop muted class="fixed top-0 left-0 w-full h-full object-cover">
         <source src="4K_13.mp4" type="video/mp4">
         Unsupported video
     </video>
-     <!-- Video sand timer -->
-     <video id="video-sand" autoplay loop muted class="h-20 w-full absolute inset-0 opacity-10 rounded-full border-blur">
-        <source src="vecteezy_sand-glass-2d_28379763.mp4" type="video/mp4">
-        Unsupported video
-      </video>
     <!--Header-->
-    <header class="top-0 left-0 w-full h-20 bg-black bg-opacity-80 text-white text-opacity-60 text-center font-mono py-4 flex items-center justify-center mb-20">
+    <header class="top-0 left-0 w-full h-30 bg-black bg-opacity-80 text-white text-opacity-60 text-center font-mono py-4 flex flex-col items-center justify-center">
         <h1 class="text-3xl font-bold">TIMEWISE</h1>
-      </header>    
+        
+        <!-- Video sand timer -->
+        <video id="video-sand" autoplay loop muted class="h-20 opacity-10 rounded-full border-blur fixed">
+            <source src="vecteezy_sand-glass-2d_28379763.mp4" type="video/mp4">
+            Unsupported video
+        </video>
+    </header>           
     <!--Main-->
     <main class="mt-40 mb-40 ml-5 mr-5 font-mono">
-        <div id="quiz-container" class="p-6 bg-black bg-opacity-60 rounded shadow-md mx-auto text-center text-white">
+        <div id="quiz-container" class="p-6 bg-black bg-opacity-60 rounded mx-auto text-center text-white md:max-w-2xl">
             <div id="timer" class="flex items-center justify-center">
                 00:00
             </div>            
@@ -74,7 +69,7 @@
         </div>
     </main>
      <!--FOOTER--> 
-    <footer class="p-6 bg-black bg-opacity-60 rounded shadow-md mx-auto text-center text-white  font-mono mt-20">
+    <footer class="p-6 bg-black bg-opacity-60 rounded shadow-md mx-auto text-center text-white font-mono mt-20">
         <h3 class="m-2 font-bold underline">Contact</h3>
     <a href="mailto:Jacob-may@outlook.com" class="hover:text-pink-500 block m-2">Jacob-may@outlook.com</a>
     <p class="mb-4">
