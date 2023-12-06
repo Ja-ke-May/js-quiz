@@ -230,7 +230,7 @@ const checkAnswer = (event) => {
     setTimeout(() => {
       minusFive.style.display = 'none';
     }, 500);
-  }
+  };
 
   // Move to next question
   currentQuestionIndex++;
@@ -272,16 +272,16 @@ function startTimer() {
       resetQuiz();
     }
   }, 1000);
-}
+};
 
 // 3, 2, 1 timer red function
 function updateTimerColor() {
-  if (timerDuration <= 3 && timerDuration >= 0) {
-    timerElement.classList.add("text-red-500");
+  if (timerDuration <= 5 && timerDuration >= 0) {
+    timerElement.classList.add("text-red-500", "brightness-125");
   } else {
-    timerElement.classList.remove("text-red-500");
+    timerElement.classList.remove("text-red-500", "brightness-125");
   }
-}
+};
 
 // Reset timer
 function resetTimer() {
@@ -289,7 +289,7 @@ function resetTimer() {
   timerDuration = 22; // Reset the timer duration
   updateTimer();
   startTimer(); // Start the timer again after resetting
-}
+};
 
 // Reset quiz and timer
 function resetQuiz() {
@@ -298,7 +298,7 @@ function resetQuiz() {
   shuffleArray(questions);
   loadQuestion();
   resetTimer(); // Reset the timer when resetting the quiz
-}
+};
 
 // Initial load of the first question and start timer
 loadQuestion();
