@@ -247,9 +247,6 @@ const checkAnswer = (event) => {
   }
 };
 
-// Initial load of the first question
-loadQuestion();
-
 const timerElement = document.getElementById('timer');
 let timer;
 let timerDuration = 22; // Initial timer duration in seconds
@@ -296,6 +293,11 @@ function resetQuiz() {
 // Initial load of the first question and start the timer
 loadQuestion();
 updateTimer(); // Display initial timer value
-
 startTimer(); // Start the timer
+
+
+// AUDIO
+const audio = document.querySelector('audio');
+const audioOnImage = document.getElementById('audioOn');
+const audioOffImage = document.getElementById('audioOff');
 
