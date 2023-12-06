@@ -256,7 +256,8 @@ function updateTimer() {
   const minutes = Math.floor(timerDuration / 60);
   const seconds = timerDuration % 60;
   timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-}
+  updateTimerColor()
+};
 
 // Start timer
 function startTimer() {
@@ -271,6 +272,15 @@ function startTimer() {
       resetQuiz();
     }
   }, 1000);
+}
+
+// 3, 2, 1 timer red function
+function updateTimerColor() {
+  if (timerDuration <= 3 && timerDuration >= 0) {
+    timerElement.classList.add("text-red-500");
+  } else {
+    timerElement.classList.remove("text-red-500");
+  }
 }
 
 // Reset timer
