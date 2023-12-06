@@ -298,6 +298,17 @@ startTimer(); // Start the timer
 
 // AUDIO
 const audio = document.querySelector('audio');
-const audioOnImage = document.getElementById('audioOn');
-const audioOffImage = document.getElementById('audioOff');
+const audioOn = document.getElementById('audioOn');
+const audioOff = document.getElementById('audioOff');
 
+audioOn.addEventListener('click', () => {
+  audioOn.style.display = "none";
+  audioOff.style.display = "block";
+  audio.pause();
+});
+
+audioOff.addEventListener('click', () => {
+  audioOn.style.display = "block";
+  audioOff.style.display = "none";
+  audio.play();
+});
