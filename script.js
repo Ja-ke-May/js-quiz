@@ -166,7 +166,7 @@ const questions = [
       }
 ];
 
-// Shuffle function
+// Shuffle function, Fisher-Yates shuffle algorithm
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -190,11 +190,11 @@ const minusFive = document.getElementById('red-minus');
 let currentQuestionIndex = 0;
 let count = 0;
 
-// Load the current question and its options
+// Load the current question and options
 const loadQuestion = () => {
   const currentQuestion = questions[currentQuestionIndex];
 
-  // Display the question
+  // Display question
   questionBox.textContent = currentQuestion.question;
 
   // Remove existing event listeners on answer buttons
@@ -202,20 +202,20 @@ const loadQuestion = () => {
     button.removeEventListener('click', checkAnswer);
   });
 
-  // Display the answer options
+  // Display answer options
   Array.from(answerButtons).forEach((button, i) => {
     button.textContent = currentQuestion.options[i];
-    // Add event listener to check the answer when a button is clicked
+    // Add event listener
     button.addEventListener('click', checkAnswer);
   });
 };
 
-// Function to check the selected answer
+// Check selected answer
 const checkAnswer = (event) => {
   const selectedAnswer = event.target.textContent;
   const correctAnswer = questions[currentQuestionIndex].correctAnswer;
 
-  // Check if the selected answer is correct
+  // Check selected answer is correct
   if (selectedAnswer === correctAnswer) {
     count++;
     timerDuration += 3;
@@ -232,14 +232,14 @@ const checkAnswer = (event) => {
     }, 500);
   }
 
-  // Move to the next question
+  // Move to next question
   currentQuestionIndex++;
 
   // Check if there are more questions
   if (currentQuestionIndex < questions.length) {
     loadQuestion();
   } else {
-    // Display a message or perform actions when the quiz ends
+    // Display message 
     alert('Quiz completed! Your score: ' + count);
 
     // Reset the quiz when the alert "OK" is clicked
@@ -251,14 +251,14 @@ const timerElement = document.getElementById('timer');
 let timer;
 let timerDuration = 22; // Initial timer duration in seconds
 
-// Function to update and display the timer
+// Update and display timer
 function updateTimer() {
   const minutes = Math.floor(timerDuration / 60);
   const seconds = timerDuration % 60;
   timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
-// Function to start the timer
+// Start timer
 function startTimer() {
   timer = setInterval(function () {
     if (timerDuration > 0) {
@@ -273,7 +273,7 @@ function startTimer() {
   }, 1000);
 }
 
-// Function to reset the timer
+// Reset timer
 function resetTimer() {
   clearInterval(timer);
   timerDuration = 22; // Reset the timer duration
@@ -281,7 +281,7 @@ function resetTimer() {
   startTimer(); // Start the timer again after resetting
 }
 
-// Function to reset the quiz and timer
+// Reset quiz and timer
 function resetQuiz() {
   currentQuestionIndex = 0;
   count = 0;
@@ -290,7 +290,7 @@ function resetQuiz() {
   resetTimer(); // Reset the timer when resetting the quiz
 }
 
-// Initial load of the first question and start the timer
+// Initial load of the first question and start timer
 loadQuestion();
 updateTimer(); // Display initial timer value
 startTimer(); // Start the timer
@@ -301,12 +301,14 @@ const audio = document.querySelector('audio');
 const audioOn = document.getElementById('audioOn');
 const audioOff = document.getElementById('audioOff');
 
+// Turn audio off
 audioOn.addEventListener('click', () => {
   audioOn.style.display = "none";
   audioOff.style.display = "block";
   audio.pause();
 });
 
+// Turn audio on
 audioOff.addEventListener('click', () => {
   audioOn.style.display = "block";
   audioOff.style.display = "none";
