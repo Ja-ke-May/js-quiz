@@ -182,7 +182,6 @@ shuffleArray(questions);
 
 const quizContainer = document.getElementById('quiz-container');
 const questionBox = document.getElementById('question-box');
-const answerBoxs = document.getElementById('answer-boxs');
 const answerButtons = document.getElementsByClassName('answer-box');
 const plusThree = document.getElementById('green-plus');
 const minusFive = document.getElementById('red-minus');
