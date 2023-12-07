@@ -130,17 +130,12 @@
         </section>
         <!--Start-->
         <section id="start-container" class="hidden p-6 bg-black bg-opacity-60 rounded mx-auto text-center text-white md:max-w-2xl"> 
-            <p class="text-2xl flex items-center justify-center absolute inset-x-0">
+            <p class="text-2xl flex items-center justify-center mb-5">
                 Remember, Time is limited.
-            </p> 
-            <br>
-            <hr class="border-pink-500 m-3">   
-            <p class="flex items-center justify-center mb-5 text-2xl">  
-              So be wise...
-            </p>
+                <br>
+                So be wise...
+            </p>    
             <div class="grid grid-cols-2 gap-4 justify-center">
-                <p></p>
-                <p ></p>
                 <button id="start-previous" class="bg-pink-500 text-white text-center px-3 py-2 rounded">Previous</button>
                 <button id="start-next" class="bg-green-500 text-white text-center px-3 py-2 rounded">Start</button>
             </div>
@@ -148,18 +143,18 @@
         <!--End-->
         <section id="end-container" class="hidden p-6 bg-black bg-opacity-60 rounded mx-auto text-center text-white md:max-w-2xl"> 
             <p id="end-message" class="text-2xl flex items-center justify-center absolute inset-x-0">
-                Congratulations!
+                
             </p> 
             <br>
             <hr class="border-pink-500 m-3">   
             <p  id="end-message1" class="flex items-center justify-center mb-5 text-2xl">  
-                You've Completed all 33 questions!
+                You've Completed all 33 questions!  
             </p>
-            <div class="grid grid-cols-2 gap-4 justify-center">
-                <p>Your Score: <span id="final-score"></span></p>
-                <p>Your Time: <span id="final-time"></span> seconds</p>
+            <div class="flex flex-col items-center justify-center m-5">
+                <p class="m-2">Your Score: <span id="final-score"></span></p>
+                <p  id="secs" class="m-2">Your Time: <span id="final-time"></span> seconds</p>
                 <p></p>
-                <button id="end-next" class="bg-green-500 text-white text-center px-3 py-2 rounded">Back to Start</button>
+                <button id="end-next" class="bg-pink-500 text-white text-center px-3 py-2 rounded m-2">Back to Start</button>
             </div>
         </section>
     </main>

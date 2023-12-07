@@ -188,7 +188,9 @@ const plusThree = document.getElementById('green-plus');
 const minusFive = document.getElementById('red-minus');
 const finalScore = document.getElementById('final-score');
 const finalTime = document.getElementById('final-time');
-
+const secs = document.getElementById('secs');
+const endMessage = document.getElementById('end-message');
+const endMessage1 = document.getElementById('end-message1');
 
 let currentQuestionIndex = 0;
 let count = 0;
@@ -243,6 +245,7 @@ const checkAnswer = (event) => {
     loadQuestion();
   } else {
     // Congratulations end quiz
+    clearInterval(timer); // Stop the timer
     endContainer.style.display = "block";
       quizContainer.style.display = "none";
     finalScore.textContent = count;
@@ -272,15 +275,15 @@ function startTimer() {
       updateTimer();
     } else {
       // Time is up, end the quiz
+      clearInterval(timer); // Stop the timer
       endContainer.style.display = "block";
       quizContainer.style.display = "none"; 
       // Display final score and time
-    const endMessage = document.getElementById('end-message');
-    const endMessage1 = document.getElementById('end-message1');
     finalScore.textContent = count;
     finalTime.textContent = timerDuration;
     endMessage.innerText = "Out of Time!"
-    endMessage1.innerText = ""
+    endMessage1.innerText = "";
+    secs.style.display = "none";
     }
   }, 1000);
   count = 0;
