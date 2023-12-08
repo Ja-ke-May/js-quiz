@@ -157,8 +157,8 @@ const questions = [
       },
       {
           question: "What is the largest river in the world?",
-          options: ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
-          correctAnswer: "Amazon River",
+          options: ["Amazon River", "Nile River", "River Aire", "Mississippi River"],
+          correctAnswer: "Nile River",
       },
       {
         question: "Who developed the theory of general relativity?",
