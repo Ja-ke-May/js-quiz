@@ -6,9 +6,6 @@
     <title>TimeWise</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        #video-sand {
-            animation: scaledown 2s forwards ease-out;
-        }
         @keyframes scaledown {
             from {
                 transform: scale(2);
@@ -36,7 +33,6 @@
         }
     </style>    
 </head>
-<img src="titleimg.png" class="hidden" alt="title image">
 <body class="bg-black font-mono">
     <!-- Video Background -->
     <video id="video-background" autoplay loop muted class="fixed top-0 left-0 min-w-full min-h-full object-cover">
@@ -149,7 +145,7 @@
             <br>
             <hr class="border-pink-500 m-3">   
             <p  id="end-message1" class="flex items-center justify-center mb-5 text-2xl">  
-                You've Completed all 33 questions!  
+                  
             </p>
             <div class="flex flex-col items-center justify-center m-5">
                 <p class="m-2">Your Score: <span id="final-score"></span></p>
