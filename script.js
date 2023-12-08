@@ -251,8 +251,9 @@ const checkAnswer = (event) => {
       quizContainer.style.display = "none";
     finalScore.textContent = count;
     finalTime.textContent = timerDuration; 
-    endMessage.innerText = "Congratulations!"
-    endMessage1.innerText = "You've Completed all 33 questions!"
+    endMessage.innerText = "Congratulations!";
+    endMessage1.innerText = "You've Completed all 33 questions!";
+    secs.style.display = "block";
   }
 };
 
