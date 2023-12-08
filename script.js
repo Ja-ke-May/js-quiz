@@ -1,3 +1,5 @@
+// easy to change questions if needed
+
 const questions = [
         {
           question: "Which planet is known as the 'Red Planet'?",
@@ -194,7 +196,7 @@ const endMessage1 = document.getElementById('end-message1');
 let currentQuestionIndex = 0;
 let count = 0;
 
-// Load the current question and options
+// Load current question and options
 const loadQuestion = () => {
   const currentQuestion = questions[currentQuestionIndex];
 
