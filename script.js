@@ -1,5 +1,4 @@
 // easy to change questions if needed
-
 const questions = [
         {
           question: "Which planet is known as the 'Red Planet'?",
@@ -248,12 +247,12 @@ const checkAnswer = (event) => {
     // Congratulations end quiz
     clearInterval(timer); // Stop the timer
     endContainer.style.display = "block";
-      quizContainer.style.display = "none";
+    quizContainer.style.display = "none";
+    secs.style.display = "block";
     finalScore.textContent = count;
     finalTime.textContent = timerDuration; 
     endMessage.innerText = "Congratulations!";
     endMessage1.innerText = "You've Completed all 33 questions!";
-    secs.style.display = "block";
   }
 };
 
